@@ -10,3 +10,7 @@ body {
     background-color: var(--main-bg-color);
     color: white;
 }
+
+.no-background {
+    background: none !important;
+}
