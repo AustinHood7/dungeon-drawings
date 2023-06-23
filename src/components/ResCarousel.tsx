@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 function ResCarousel() {
     return (
-        <Carousel autoPlay interval={5000} infiniteLoop={true} showArrows={false} showStatus={false} showIndicators={false}>
+        <Carousel autoPlay interval={5000} infiniteLoop={true} showArrows={false} showStatus={false} showIndicators={false} showThumbs={false}>
             <div className='border-0 rounded-xl overflow-hidden'>
                 <Image src="/dalle-1.png" alt="Legend 1" width={250} height={250} />
             </div>
