@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-between bg-custom bg-cover bg-center bg-no-repeat px-10">
         <Navbar />
-        <div className="md:flex items-center justify-evenly mx-[15%]">
+        <div className="md:flex items-center justify-center gap-6">
           <div className="flex justify-center">
             <div className="max-w-[65%]">
               <h1 className="text-4xl font-bold tracking-tight text-text ">
@@ -32,7 +32,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="md:max-w-[30%] shadow-lg">
+          <div className="md:max-w-[25%]">
             <ResCarousel />
           </div>
         </div>
