@@ -13,7 +13,7 @@ export default {
         'primary': '#959797',
         'text': '#f0f0f0',
         'secondary': '#242423',
-        'accent': '#09f7d9',
+        'accent': '#4FACF7',
       }
     }
   },

@@ -36,4 +36,8 @@ body {
     transition: opacity 300ms, transform 300ms;
   }
   
-  
+  @layer base {
+    .bg-custom {
+      background-image: url('/layered-waves-haikei.svg');
+    }
+  }

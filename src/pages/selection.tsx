@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 function selection() {
   return (
-    <div className='flex min-h-screen flex-col items-center bg-gradient-linear px-10'>
+    <div className='flex min-h-screen flex-col items-center bg-custom px-10'>
         <Navbar />
         <h1 className='text-text text-4xl pt-16'>
             Please specify the details of your dream
