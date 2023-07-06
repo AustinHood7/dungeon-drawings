@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Navbar from "~/components/Navbar";
-import ResCarousel from "~/components/ResCarousel";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
 
@@ -32,8 +32,13 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="md:max-w-[25%]">
-            <ResCarousel />
+          <div className="border-2 rounded-xl overflow-hidden border-accent">
+            <Image 
+              src='/dalle-1.png'
+              width={400}
+              height={533.3333}
+              alt=''
+            />
           </div>
         </div>
         <div className="text-xl text-text pb-6">Powered by DALL-E</div>

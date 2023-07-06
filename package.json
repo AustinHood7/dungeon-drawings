@@ -21,8 +21,8 @@
     "next": "^13.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-responsive-carousel": "^3.2.23",
     "react-transition-group": "^4.4.5",
+    "react-use": "^17.4.0",
     "superjson": "1.12.2",
     "zod": "^3.21.4"
   },
