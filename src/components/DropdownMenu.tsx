@@ -1,4 +1,5 @@
-import { useState, FC } from 'react';
+import { useState } from 'react';
+import type { FC } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 interface DropdownMenuProps {

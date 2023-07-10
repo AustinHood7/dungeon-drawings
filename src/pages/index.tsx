@@ -25,7 +25,7 @@ export default function Home() {
               <div className="mt-10 text-text text-2xl">
                 Bring your imagination to life with the power of AI
               </div>
-              <Link href='/selection' passHref>
+              <Link href='/Selection' passHref>
                 <button className="border-accent rounded-md py-4 px-8 bg-accent text-bg mt-6 text-xl opacity-70 hover:opacity-100 transition-opacity duration-300 ease-in-out">
                   Get Started
                 </button>

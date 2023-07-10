@@ -4,16 +4,22 @@ import Navbar from '~/components/Navbar'
 import Link from 'next/link'
 import { api } from '~/utils/api';
 
-function selection() {
+function Selection() {
   const [prompt, setPrompt] = useState<string | null>(null);
   const dalle = api.example.dalle.useMutation();
 
-  const handleClick = async () => {
-    try {
-      const result = await dalle.mutateAsync({ prompt: "A cute american sheppard puppy" });
-    } catch (error) {
-      console.error(error);
-    }
+  const handleClick = () => {
+    const prompt = "A cute american sheppard puppy";
+    dalle.mutate({ prompt }, {
+      onSuccess: (data) => {
+        // Handle success
+        console.log(data);
+      },
+      onError: (error) => {
+        // Handle error
+        console.error(error);
+      }
+    });
   };
 
   return (
@@ -36,7 +42,7 @@ function selection() {
             <DropdownMenu placeholder="Skin Color" options={["White", "Black", "Brown", "Pink", "Blue"]}/>
           </div>
         </div>
-        <Link href='/selection' passHref className='mt-14'>
+        <Link href='/Selection' passHref className='mt-14'>
           <button className="border-accent rounded-md py-4 px-8 bg-accent text-bg text-xl opacity-70 hover:opacity-100 transition-opacity duration-300 ease-in-out"
           onClick={handleClick}>
             Complete
@@ -49,4 +55,4 @@ function selection() {
   )
 }
 
-export default selection
+export default Selection
