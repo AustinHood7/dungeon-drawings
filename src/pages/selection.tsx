@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DropdownMenu from '~/components/DropdownMenu'
 import Navbar from '~/components/Navbar'
 import Link from 'next/link'
+import { api } from '~/utils/api';
 
 function selection() {
+  const [prompt, setPrompt] = useState<string | null>(null);
+  const dalle = api.example.dalle.useMutation();
+
+  const handleClick = async () => {
+    try {
+      const result = await dalle.mutateAsync({ prompt: "A cute american sheppard puppy" });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className='flex min-h-screen flex-col items-center bg-custom px-10'>
         <Navbar />
@@ -25,7 +37,8 @@ function selection() {
           </div>
         </div>
         <Link href='/selection' passHref className='mt-14'>
-          <button className="border-accent rounded-md py-4 px-8 bg-accent text-bg text-xl opacity-70 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          <button className="border-accent rounded-md py-4 px-8 bg-accent text-bg text-xl opacity-70 hover:opacity-100 transition-opacity duration-300 ease-in-out"
+          onClick={handleClick}>
             Complete
           </button>
         </Link>
