@@ -11,11 +11,11 @@ function Selection() {
   const handleClick = () => {
     const prompt = "A cute american sheppard puppy";
     dalle.mutate({ prompt }, {
-      onSuccess: (data) => {
+      onSuccess: (data: any) => {
         // Handle success
         console.log(data);
       },
-      onError: (error) => {
+      onError: (error: any) => {
         // Handle error
         console.error(error);
       }
