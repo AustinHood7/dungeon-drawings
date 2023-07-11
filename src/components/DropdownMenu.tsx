@@ -5,15 +5,17 @@ import { CSSTransition } from 'react-transition-group';
 interface DropdownMenuProps {
   placeholder: string;
   options: string[];
+  onChange: (value: string) => void;
 }
 
-const DropdownMenu: FC<DropdownMenuProps> = ({ placeholder, options }) => {
+const DropdownMenu: FC<DropdownMenuProps> = ({ placeholder, options, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(placeholder);
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
     setIsOpen(false);
+    onChange(option);
   };
 
   return (

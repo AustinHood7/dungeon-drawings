@@ -14,7 +14,21 @@ export default {
         'text': '#f0f0f0',
         'secondary': '#242423',
         'accent': '#4FACF7',
-      }
+      },
+      keyframes: {
+        fadeDown: {
+          '0%': { opacity: '0', transform: 'translateY(-1rem)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        fadeDown: 'fadeDown .5s ease-out',
+      },
+    },
+    variants: {
+      extend: {
+        animation: ['hover'],
+      },
     }
   },
   plugins: [],
