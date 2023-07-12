@@ -43,7 +43,7 @@ export const exampleRouter = createTRPCRouter({
     try {
       const response = await openai.createImage({
         prompt: input.prompt,
-        n: 2,
+        n: 1,
         size: "1024x1024",
       });
       console.log(response.data);

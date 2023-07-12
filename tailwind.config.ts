@@ -14,6 +14,9 @@ export default {
         'text': '#f0f0f0',
         'secondary': '#242423',
         'accent': '#4FACF7',
+        'radial-gradient-start': 'rgba(252,211,77,0.64)', // the start color of your radial gradient
+        'radial-gradient-end': 'rgba(28,25,23,1)', // the end color of your radial gradient
+        'opaque': 'rgba(198, 208, 216, 0.15)',
       },
       keyframes: {
         fadeDown: {
