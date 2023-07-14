@@ -27,6 +27,14 @@ export default {
       animation: {
         fadeDown: 'fadeDown .5s ease-out',
       },
+      boxShadow: {
+        glow: '0 0 10px 0 #000000', 
+        blueGlow: '0 0 20px 0 #4FACF7',
+        sBlueGlow: '0 0 10px 0 #4FACF7',
+      },
+      textShadow: {
+        'white' : '0 0 1em #f4f4f5',
+      },
     },
     variants: {
       extend: {
@@ -34,5 +42,5 @@ export default {
       },
     }
   },
-  plugins: [],
+  plugins: [require('tailwindcss-textshadow')],
 } satisfies Config;

@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <>
         <div className='flex w-full gap-12 px-[6%] pt-8 text-xl justify-between'>
-            <Link href='/'><div>Home</div></Link>
+            <Link href='/'><div className='hover:text-shadow-white transition-all duration-200'>Home</div></Link>
             {!user.isSignedIn && <SignInButton />}{!!user.isSignedIn && <UserButton />}
         </div>
     </>
