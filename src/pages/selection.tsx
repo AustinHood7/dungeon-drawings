@@ -6,6 +6,14 @@ import { api } from '~/utils/api';
 import Image from 'next/image';
 import { LineWave } from 'react-loader-spinner';
 import { HiDownload } from 'react-icons/hi'
+import { ImagesResponse } from 'openai';
+
+interface ResponseData {
+  created: number;
+  data: Array<{
+    url: string | undefined; // now url can be string or undefined
+  }>;
+}
 
 function Selection() {
   const dalle = api.example.dalle.useMutation();
@@ -23,6 +31,7 @@ function Selection() {
   const [imageURL, setImageURL] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [error, setError] = useState("");
 
   const handleRaceChange = (selectedRace: string) => {
     
@@ -61,10 +70,15 @@ function Selection() {
     setIsLoading(true);
     const prompt = `${hColor} haired ${race} ${classType} with ${hair} hair wearing ${clothes} in ${setting}, ${medium}`;
     dalle.mutate({ prompt }, {
-      onSuccess: (data: any) => {
-        console.log(data.data[0].url);
-        setImageURL(data.data[0].url);
-        setIsLoading(false);
+      onSuccess: (data: ImagesResponse | undefined) => {
+        if (data && data.data && data.data.length > 0 && data!.data[0]!.url) {
+          console.log(data!.data![0]!.url);
+          setImageURL(data!.data![0]!.url);
+          setIsLoading(false);
+          setError("");  // clear any previous error
+        } else {
+          setError("Unable to generate image, please try again.");
+        }
       },
       onError: (error: any) => {
         console.error(error);
