@@ -71,15 +71,16 @@ function Selection() {
     const prompt = `${hColor} haired ${race} ${classType} with ${hair} hair wearing ${clothes} in ${setting}, ${medium}`;
     dalle.mutate({ prompt }, {
       onSuccess: (data: ImagesResponse | undefined) => {
-        if (data && data.data && data.data.length > 0 && data!.data[0]!.url) {
-          console.log(data!.data![0]!.url);
-          setImageURL(data!.data![0]!.url);
-          setIsLoading(false);
-          setError("");  // clear any previous error
+        if (data && data.data && data.data[0] && data.data[0].url) {
+            console.log(data.data[0].url);
+            setImageURL(data.data[0].url);
+            setIsLoading(false);
+            setError("");  
         } else {
-          setError("Unable to generate image, please try again.");
+            setError("Unable to generate image, please try again.");
         }
-      },
+    },
+    
       onError: (error: any) => {
         console.error(error);
         setIsLoading(false);
